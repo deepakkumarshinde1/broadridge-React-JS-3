@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormControl from "../atomic/molecule/FormControl";
 
 function LoginForm() {
@@ -8,6 +8,28 @@ function LoginForm() {
     userName: "",
     userPassword: "",
   });
+  let [intervalId, setIntervalId] = useState(null);
+
+  // mounting
+  // unmounting
+  useEffect(() => {
+    console.log("fn Comp Mounting");
+    let _intervalId = setInterval(() => {
+      console.log("Interval");
+    }, 1000);
+    setIntervalId(_intervalId);
+    console.log("mounting");
+
+    return () => {
+      clearInterval(_intervalId);
+      console.log("fn comp unmounting");
+    };
+  }, []); // [] => mounting
+
+  // update
+  useEffect(() => {
+    console.log("update");
+  }, [loginForm]);
 
   let handelInput = (event) => {
     let { value, name } = event.target;
@@ -18,6 +40,7 @@ function LoginForm() {
   };
   return (
     <section className="row">
+      {console.log("fn comp rendering")}
       <section className="col-10 col-lg-5 m-auto border border-2 p-3 mt-5">
         <h3 className="text-center">User Login</h3>
         <form action="#">

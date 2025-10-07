@@ -3,13 +3,42 @@ import FormControl from "../atomic/molecule/FormControl";
 
 class RegistrationForm extends Component {
   constructor(props) {
+    console.log("init");
     super(props);
     this.state = {
       userName: "",
       userEmail: "",
       userPassword: "",
+      intervalId: null,
     };
   }
+
+  componentDidMount() {
+    // let _intervalId = setInterval(() => {
+    //   console.log("Interval");
+    // }, 1000);
+    // console.log("mounting");
+    // this.setState((state) => {
+    //   state.intervalId = _intervalId;
+    //   return state;
+    // });
+  }
+
+  componentDidUpdate() {
+    console.log("updating");
+  }
+
+  componentWillUnmount() {
+    // clearInterval(this.state.intervalId);
+    console.log("unmounting");
+  }
+
+  shouldComponentUpdate() {
+    return false;
+  }
+
+  componentDidCatch() {}
+
   handelInput = (event) => {
     let { value, name } = event.target;
     this.setState((state) => {
@@ -18,6 +47,7 @@ class RegistrationForm extends Component {
     });
   };
   render() {
+    console.log("render");
     return (
       <section className="row">
         <section className="col-10 col-lg-5 m-auto border border-2 p-3 mt-5">

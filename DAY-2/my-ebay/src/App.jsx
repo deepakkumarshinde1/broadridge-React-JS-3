@@ -8,7 +8,7 @@ import RegistrationForm from "./components/RegistrationForm";
 // whenever a state changed a component re-renders
 // it will detect the changes and as per that it will make a update in real dom
 function App() {
-  let [toggle, setToggle] = useState(false); // [state, updateStateMethod]
+  let [toggle, setToggle] = useState(true); // [state, updateStateMethod]
   let switchForm = () => {
     setToggle(!toggle);
   };
