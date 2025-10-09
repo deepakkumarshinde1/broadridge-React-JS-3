@@ -1,6 +1,10 @@
 import style from "./Users.module.css";
 function Users() {
-  return <div className={style["text-success"]}>Users Comp Text</div>;
+  return (
+    <>
+      <p>Users List</p>
+    </>
+  );
 }
 
 export default Users;

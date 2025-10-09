@@ -1,0 +1,15 @@
+.w-10 {
+  width: 10%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+ul > li > a {
+  text-decoration: none;
+}
+
+ul > li > .active {
+  text-decoration: underline;
+}
