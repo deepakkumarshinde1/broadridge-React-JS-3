@@ -13,8 +13,6 @@ function Input(props, ref) {
           type={type}
           className="form-control"
           placeholder={`Enter ${label}`}
-          // onChange={handelChange}
-          // value={formInputs.username}
           name="username"
           ref={ref}
         />
